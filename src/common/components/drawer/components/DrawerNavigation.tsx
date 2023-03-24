@@ -41,14 +41,14 @@ const DrawerNavigation = () => {
 
   return (
     <div className={css.drawer_navigation_container}>
-      <Img src={arrowLeftIcon} onClick={handlePrev} />
+      <Img src={arrowLeftIcon} onClick={handlePrev} testId="drawer-navigation-btn-prev" />
       <span className={css.navigation_index}>
         <span data-testid="drawer-navigation-current-index">
           {currentSelectedIndex}
         </span>
         <span className={css.separator}>/</span> {workloads.length}
       </span>
-      <Img src={arrowRightIcon} onClick={handleNext} />
+      <Img src={arrowRightIcon} onClick={handleNext} testId="drawer-navigation-btn-next" />
     </div>
   );
 };
