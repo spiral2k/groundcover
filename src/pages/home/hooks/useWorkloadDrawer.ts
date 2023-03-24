@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import useAxios from "src/common/hooks/useAxios";
+import useDebouncedCallback from "src/common/hooks/useDebounceCallback";
 import useSelectedWorkloadId from "src/common/hooks/useSelectedWorkloadId";
 import { ChartSeries, Workload } from "src/types";
 import { transformToSeries } from "src/utils";
@@ -41,10 +42,12 @@ function useWorkloadDrawer(): ReturnType {
     setVelovitySeries(normalizedSeries);
   };
 
+  const handleFetchWithDebounce = useDebouncedCallback(handleFetch, 500)
+
   useEffect(() => {
     if (!selectedWorkloadId) return;
     setIsOpen(true);
-    handleFetch(selectedWorkloadId);
+    handleFetchWithDebounce(selectedWorkloadId);
   }, [selectedWorkloadId]);
 
   const onDrawerClose = () => {
