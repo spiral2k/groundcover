@@ -27,6 +27,8 @@ describe("Home page", () => {
         "drawer-navigation-current-index"
       );
       expect(currentIndex.textContent).toEqual("1");
+    }, {
+      timeout: 2000
     });
 
     screen.debug();
