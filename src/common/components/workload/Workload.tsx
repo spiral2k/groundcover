@@ -32,7 +32,7 @@ function Workload({ item, onClick }: Props) {
           <div className={css.workload_namespace}>{namespace}</div>
         </div>
 
-        <Protocols protocols={protocols} />
+        <Protocols protocols={protocols} issuesCount={issuesCount} />
       </div>
     </div>
   );

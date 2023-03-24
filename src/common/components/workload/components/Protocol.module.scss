@@ -1,14 +1,23 @@
-.protocol_list li {
-  display: inline-block;
-  line-height: 2rem;
-  &:before {
-    content: "\00a0\2022\00a0\00a0";
-    color: #000000;
-    font-size: 1.1rem;
-    padding: 0 0.5rem;
+.protocol_list {
+  margin-left: -1rem;
+  color: rgba(64, 65, 69, 0.5);
+
+  &.hasIssues {
+    color: #333333;
   }
 
-  &:first-child:before {
-    content: "";
+  & li {
+    display: inline-block;
+    line-height: 2rem;
+    &:before {
+      content: "\00a0\2022\00a0\00a0";
+      color: #000000;
+      font-size: 1.1rem;
+      padding: 0 0.5rem;
+    }
+
+    &:first-child:before {
+      content: "";
+    }
   }
 }

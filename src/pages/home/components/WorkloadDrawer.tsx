@@ -14,20 +14,21 @@ function WorkloadDrawer({
   drawerState: DrawerState;
   drawerActions: DrawerActions;
 }) {
+  const content = drawerState.loading ? (
+    <Loader />
+  ) : (
+    drawerState.velocitySeries?.map(({ name, series, options }) => (
+      <Chart key={name} title={name} series={series} options={options} />
+    ))
+  );
+
   return (
     <Drawer isOpen={drawerState.isDrawerOpen}>
       <DrawerHeader>
         <Img src={CloseIcon} onClick={drawerActions.onDrawerClose} />
         <DrawerNavigation />
       </DrawerHeader>
-
-      {drawerState.loading ? (
-        <Loader />
-      ) : (
-        drawerState.velocitySeries?.map(({ name, series, options }) => (
-          <Chart key={name} title={name} series={series} options={options} />
-        ))
-      )}
+      {content}
     </Drawer>
   );
 }
