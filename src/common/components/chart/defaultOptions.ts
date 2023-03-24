@@ -44,15 +44,11 @@ const defaultOptions: ApexOptions = {
     xaxis: {
       tickAmount: 4,
       labels: {
-        formatter: function (value, timestamp) {
-          if (!timestamp || timestamp < 0) return "";
-          return format(new Date(timestamp), "HH:mm");
+        formatter: function (value: any) {
+          if (!value) return "";
+          return format(new Date(value * 1000), "HH:mm");
         },
       },
-    },
-    tooltip: {
-      shared: false,
-      intersect: true,
     },
   };
   
