@@ -1,0 +1,14 @@
+@import "src/style/globalVariables.scss";
+
+.page_container {
+  position: relative;
+  width: 100%;
+  min-height: calc(100% - $NAVBAR_CONTAINER_HEIGHT - 4.1rem);
+  margin-top: 4.1rem;
+  & .page_inner {
+    max-width: $GLOBAL_CONTAINER_WIDTH;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 $SIDE_PADDING 5rem $SIDE_PADDING;
+  }
+}

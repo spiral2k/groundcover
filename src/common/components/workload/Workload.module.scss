@@ -1,0 +1,62 @@
+.workload_container {
+  width: 100%;
+  background: #fff;
+  border: 0.0663583rem solid rgba(51, 51, 51, 0.1);
+  box-shadow: 0rem 0.05rem 0.05rem rgba(0, 0, 0, 0.14);
+  border-radius: 0.8rem;
+  display: flex;
+  cursor: pointer;
+
+  &.has_issues {
+    background-color: #edf6ff;
+  }
+
+  &:hover {
+    border-color: #d1d1d1;
+  }
+
+  & .issue_overview_container {
+    padding: 2.3rem 2rem;
+    width: 8.4rem;
+    text-align: center;
+    font-family: "Roboto";
+    font-style: normal;
+    line-height: 1.6rem;
+    border-right: 0.07963rem solid rgba(64, 65, 69, 0.1);
+    & .count {
+      font-weight: 900;
+      font-size: 1.8rem;
+      margin: 1.7rem 0 0.8rem 0;
+    }
+
+    & .count_label {
+      font-weight: 500;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+    }
+  }
+
+  & .detailes_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2.3rem 2rem;
+    & .workload_name {
+      font-family: "Lato";
+      font-style: normal;
+      font-weight: 800;
+      font-size: 1.3rem;
+      line-height: 1.6rem;
+    }
+
+    & .workload_namespace {
+      font-family: "Roboto";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 1.1rem;
+      line-height: 1.6rem;
+      color: rgba(51, 51, 51, 0.5);
+      margin-top: 0.5rem;
+    }
+  }
+}
