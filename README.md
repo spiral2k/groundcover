@@ -4,6 +4,7 @@
 - used the `rem` unit
 - Used MSW to simulate a backend for the browser/test environment
 - used CSS modules
+- used debounce (where applicable)
 
 ### Scripts
 
