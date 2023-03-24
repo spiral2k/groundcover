@@ -37,7 +37,7 @@ const defaultOptions: ApexOptions = {
       min: 0,
       labels: {
         formatter: function (val: number) {
-          return val + "";
+          return String(val);
         },
       },
     },
@@ -45,7 +45,7 @@ const defaultOptions: ApexOptions = {
       tickAmount: 4,
       labels: {
         formatter: function (value: any) {
-          if (!value) return "";
+          if (!value || value < 0) return "";
           return format(new Date(value * 1000), "HH:mm");
         },
       },
